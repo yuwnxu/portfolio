@@ -1,0 +1,150 @@
+#app {
+  min-height: 100svh;
+}
+
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.screen--sky {
+  --hud: var(--ink);
+  background: linear-gradient(var(--sky-top), var(--sky-bottom));
+  color: var(--ink);
+}
+
+.screen--night {
+  --hud: var(--white);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.screen__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 96px var(--gutter) 96px;
+}
+
+.hud {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 30px;
+  color: var(--hud);
+  font-size: 12px;
+}
+
+.hud__hp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hearts {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.heart {
+  fill: var(--pink);
+}
+
+.toolbar {
+  align-self: flex-start;
+  margin-bottom: 40px;
+}
+
+.heading {
+  margin-bottom: 36px;
+  color: var(--yellow);
+  font-size: clamp(18px, 3.2vw, 34px);
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.heading--left {
+  margin-bottom: 28px;
+  font-size: clamp(16px, 2.2vw, 26px);
+  text-align: left;
+}
+
+.clouds {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  left: 0;
+  animation: drift var(--dur) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.ground-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 32px;
+  pointer-events: none;
+}
+
+.ground {
+  height: 100%;
+  background: linear-gradient(var(--mint) 8px, var(--purple) 8px);
+}
+
+.walker {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  animation: walk 32s linear infinite;
+}
+
+@media (max-width: 700px) {
+  .hud {
+    padding: 18px;
+    font-size: 9px;
+  }
+
+  .hud__center {
+    display: none;
+  }
+
+  .heart:nth-child(n + 4) {
+    display: none;
+  }
+
+  .heart {
+    width: 16px;
+    height: 12px;
+  }
+
+  .screen__body {
+    padding-top: 80px;
+    padding-bottom: 72px;
+  }
+
+  .toolbar {
+    margin-bottom: 28px;
+  }
+}

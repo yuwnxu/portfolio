@@ -1,0 +1,81 @@
+:root {
+  --lavender: #dcd0f5;
+  --sky-top: #cdbdf2;
+  --sky-bottom: #ede6ff;
+  --ink: #2b2150;
+  --deep: #12092e;
+  --muted: #6d5fa0;
+  --purple: #7b5cd6;
+  --pink: #ff5ca8;
+  --yellow: #ffd23f;
+  --mint: #5cf2a6;
+  --card: #4b3a8f;
+  --white: #ffffff;
+  --soft: #cfc4ff;
+  --font: "Press Start 2P", ui-monospace, "Courier New", monospace;
+  --gutter: clamp(16px, 5vw, 110px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 4px dashed var(--pink);
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  pointer-events: none;
+}
+
+.wipe i {
+  background: var(--ink);
+  outline: 1px solid var(--ink);
+  transform: scale(0);
+}
