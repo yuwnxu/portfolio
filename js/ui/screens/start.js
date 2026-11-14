@@ -4,7 +4,7 @@ import { site } from "../../data/site.js";
 import { projects } from "../../data/projects.js";
 import { createHud } from "../components/hud.js";
 import { createClouds } from "../components/cloud.js";
-import { createSprite } from "../components/sprite.js";
+import { createCharacter } from "../components/character.js";
 import { createMenu } from "../components/menu.js";
 import { createButton } from "../components/button.js";
 import { createGround } from "../components/ground.js";
@@ -39,7 +39,7 @@ export function startScreen({ navigate }) {
       { class: "screen__body start" },
       title,
       h("p", { class: "subtitle" }, site.role),
-      createSprite({ size: 120, className: "sprite--bob" }),
+      createCharacter({ size: 120, className: "sprite--bob" }),
       menu.el,
       createButton({ label: "PRESS START", className: "btn--blink", onClick: () => menu.activate() }),
       h(

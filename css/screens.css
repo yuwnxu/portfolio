@@ -181,6 +181,10 @@
 }
 
 @media (max-width: 700px) {
+  .contact {
+    padding-top: 150px;
+  }
+
   .card {
     display: grid;
     grid-template-columns: 108px minmax(0, 1fr);

@@ -5,7 +5,7 @@ import { projects } from "../../data/projects.js";
 import { hero, skills } from "../../data/skills.js";
 import { createHud } from "../components/hud.js";
 import { createButton } from "../components/button.js";
-import { createSprite } from "../components/sprite.js";
+import { createCharacter } from "../components/character.js";
 
 function createSkill({ name, level }, index) {
   const segments = Array.from({ length: 10 }, (_, i) =>
@@ -23,7 +23,7 @@ function createHero() {
   return h(
     "section",
     { class: "hero-card" },
-    createSprite({ size: 150, className: "sprite--bob" }),
+    createCharacter({ size: 150, className: "sprite--bob" }),
     h("h1", { class: "hero-card__name" }, site.nick),
     h("p", { class: "hero-card__class" }, `КЛАСС: ${hero.className}`),
     h("p", { class: "hero-card__platforms" }, hero.platforms),

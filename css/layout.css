@@ -103,7 +103,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 3;
   height: 32px;
   pointer-events: none;
 }
@@ -118,6 +118,11 @@
   bottom: 32px;
   left: 0;
   animation: walk 32s linear infinite;
+  pointer-events: auto;
+}
+
+.walker:has(.bubble:not([hidden])) {
+  animation-play-state: paused;
 }
 
 @media (max-width: 700px) {

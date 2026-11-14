@@ -4,7 +4,7 @@ import { reducedMotion } from "../../core/motion.js";
 import { site } from "../../data/site.js";
 import { createHud } from "../components/hud.js";
 import { createClouds } from "../components/cloud.js";
-import { createSprite } from "../components/sprite.js";
+import { createCharacter } from "../components/character.js";
 import { createMenu } from "../components/menu.js";
 import { createButton } from "../components/button.js";
 import { createGround } from "../components/ground.js";
@@ -56,7 +56,7 @@ export function contactScreen({ navigate }) {
     h(
       "div",
       { class: "screen__body contact" },
-      createSprite({ size: 154, className: "sprite--bob" }),
+      createCharacter({ size: 154, className: "sprite--bob" }),
       h("section", { class: "dialog", onClick: () => !typed && finish() }, h("p", { class: "dialog__who" }, `${site.nick}:`), text, next),
       answers
     ),
